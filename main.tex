@@ -1,0 +1,54 @@
+\documentclass[english,russian]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{graphicx}
+
+%% Appendix.
+\renewcommand\appendixname{Приложение}
+\makeatletter
+\def\redeflsection{\def\l@section{\@dottedtocline{1}{1.5em}{7.8em}}}
+\renewcommand\appendix{\par
+\setcounter{section}{0}%
+\setcounter{subsection}{0}%
+\def\@chapapp{\appendixname}%
+\addtocontents{toc}{\protect\redeflsection}
+\def\thesection{\appendixname\hspace{0.2cm}\@arabic\c@section}}
+\makeatother
+
+%% Преобразует footnote '2 3' -> '2, 3'.
+\usepackage[multiple]{footmisc}
+
+%% Include paragraphis into TOC.
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+%% Inline-списки.
+\usepackage[inline]{enumitem}
+\AddEnumerateCounter{\asbuk}{\@asbuk}{\cyrm}
+
+\makeatother
+\renewcommand{\labelitemi}{-}
+
+\usepackage[%
+    backend     = biber,
+    bibencoding = utf8,
+    citestyle   = gost-footnote-min,
+    bibstyle    = gost-numeric
+]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{csquotes}
+
+%% Separate multiple cites with '; '
+\renewcommand\multicitedelim{\addsemicolon\space}
+
+\begin{document}
+\include{chapter2}
+
+\include{supplement/emblemetrics}
+
+\printbibliography
+\end{document}
