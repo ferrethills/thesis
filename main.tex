@@ -2,10 +2,10 @@
 
 \usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[english,russian]{babel}
+\usepackage[greek,english,russian]{babel}
 \usepackage{csquotes}
 
-% PDF search & cut'n'paste
+%% PDF search & cut'n'paste
 \usepackage{cmap}
 
 %% Поля
@@ -83,6 +83,7 @@
 \usepackage[titles]{tocloft}
 
 %% Inline-списки.
+\usepackage{paralist}
 \usepackage[inline]{enumitem}
 \AddEnumerateCounter{\asbuk}{\@asbuk}{\cyrm}
 
@@ -98,9 +99,11 @@
     backend     = biber,
     bibencoding = utf8,
     hyperref    = false,
+    babel       = other,
     citestyle   = gost-footnote-min,
     bibstyle    = gost-footnote
 ]{biblatex}
+\addbibresource{references/chapter1.bib}
 \addbibresource{references/chapter2.bib}
 
 %% Ссылочки.
@@ -145,7 +148,12 @@
 % ------------------------------------------------------------------------------
 % Текст работы
 \begin{onehalfspacing}
-  \include{chapter2}
+  \include{introduction}
+  \include{chapter1/paragraph1}
+  \include{chapter1/paragraph2}
+  \include{chapter1/paragraph3}
+  \include{chapter2/paragraph1}
+  \include{conclusion}
 \end{onehalfspacing}
 
 % ------------------------------------------------------------------------------
