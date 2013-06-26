@@ -153,6 +153,7 @@
   \include{chapter1/paragraph2}
   \include{chapter1/paragraph3}
   \include{chapter2/paragraph1}
+  \include{chapter2/paragraph2}
   \include{conclusion}
 \end{onehalfspacing}
 
@@ -166,10 +167,13 @@
 \begin{appendices}
   %% Согласно ЕСКД, номер рисунка в приложении должен содержать номер приложения.
   \counterwithin{figure}{section}
+  \counterwithin{table}{section}
   \renewcommand{\thesection}{\Asbuk{section}}
 
   \include{supplement/logotrends}
   \include{supplement/emblemetrics}
   \include{supplement/territorial}
+  \include{supplement/mollerup}
+  \include{supplement/trademarks}
 \end{appendices}
 \end{document}
