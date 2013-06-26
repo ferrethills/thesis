@@ -1,8 +1,9 @@
 \documentclass[a4paper,14pt]{extarticle}
 
-\usepackage[T2A]{fontenc}
+\usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
+\usepackage{csquotes}
 
 % PDF search & cut'n'paste
 \usepackage{cmap}
@@ -18,8 +19,40 @@
 
 %% Appendix.
 \usepackage[titletoc,title]{appendix}
+\renewcommand{\appendixtocname}{Приложения}
+\renewcommand{\appendixpagename}{Приложения}
+\renewcommand{\appendixname}{Приложние}
+\makeatletter
+\let\oriAlph\Alph
+\let\orialph\alph
+\renewcommand{\@resets@pp}{\par
+  \@ppsavesec
+  \stepcounter{@pps}
+  \setcounter{section}{0}%
+  \if@chapter@pp
+    \setcounter{chapter}{0}%
+    \renewcommand\@chapapp{\appendixname}%
+    \renewcommand\thechapter{\@Alph\c@chapter}%
+  \else
+    \setcounter{subsection}{0}%
+    \renewcommand\thesection{\@Alph\c@section}%
+  \fi
+  \if@pphyper
+    \if@chapter@pp
+      \renewcommand{\theHchapter}{\theH@pps.\oriAlph{chapter}}%
+    \else
+      \renewcommand{\theHsection}{\theH@pps.\oriAlph{section}}%
+    \fi
+    \def\Hy@chapapp{appendix}%
+  \fi
+  \restoreapp
+}
+\makeatother
 
-% Russian-styled figure and table captions.
+%% Рисунки в приложении содержат номер приложения: 'A.1'.
+\usepackage{chngcntr}
+
+%% Russian-styled figure and table captions.
 \usepackage[labelsep=period,font=it]{caption}
 
 % Here we define the relationships for the counters: normaly we should
@@ -64,13 +97,29 @@
 \usepackage[%
     backend     = biber,
     bibencoding = utf8,
+    hyperref    = false,
     citestyle   = gost-footnote-min,
-    bibstyle    = gost-numeric
+    bibstyle    = gost-footnote
 ]{biblatex}
-\addbibresource{references.bib}
+\addbibresource{references/chapter2.bib}
+
+%% Ссылочки.
+\usepackage{hyperref}
+\makeatletter
+\let\abx@macro@autociteOrig\abx@macro@autocite
+\renewbibmacro{autocite}{%
+   \bibhyperref{%
+   \let\bibhyperref\relax\relax%
+   \abx@macro@autociteOrig%
+   }%
+}%
+\makeatother
 
 %% Separate multiple cites with '; '
 \renewcommand\multicitedelim{\addsemicolon\space}
+
+\usepackage{remreset}
+\makeatletter\@removefromreset{footnote}{chapter}\makeatother
 
 %% Полуторный интервал
 \usepackage[nodisplayskipstretch]{setspace}
@@ -107,10 +156,12 @@
 % Приложения
 
 \begin{appendices}
-  \renewcommand\appendixname{Приложение}
+  %% Согласно ЕСКД, номер рисунка в приложении должен содержать номер приложения.
+  \counterwithin{figure}{section}
   \renewcommand{\thesection}{\Asbuk{section}}
 
   \include{supplement/logotrends}
   \include{supplement/emblemetrics}
+  \include{supplement/territorial}
 \end{appendices}
 \end{document}
