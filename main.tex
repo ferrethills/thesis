@@ -1,36 +1,65 @@
-\documentclass[english,russian]{article}
+\documentclass[a4paper,14pt]{extarticle}
 
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
 
+% PDF search & cut'n'paste
+\usepackage{cmap}
+
+%% Поля
+\usepackage[includeheadfoot,top=20mm,bottom=20mm,left=30mm,right=15mm]{geometry}
+
+%% Отступ в первом абзаце
+\usepackage{indentfirst}
+
+%% Включение графических файлов.
 \usepackage{graphicx}
 
 %% Appendix.
-\renewcommand\appendixname{Приложение}
-\makeatletter
-\def\redeflsection{\def\l@section{\@dottedtocline{1}{1.5em}{7.8em}}}
-\renewcommand\appendix{\par
-\setcounter{section}{0}%
-\setcounter{subsection}{0}%
-\def\@chapapp{\appendixname}%
-\addtocontents{toc}{\protect\redeflsection}
-\def\thesection{\appendixname\hspace{0.2cm}\@arabic\c@section}}
-\makeatother
+\usepackage[titletoc,title]{appendix}
 
-%% Преобразует footnote '2 3' -> '2, 3'.
-\usepackage[multiple]{footmisc}
+% Russian-styled figure and table captions.
+\usepackage[labelsep=period,font=it]{caption}
+
+% Here we define the relationships for the counters: normaly we should
+% reset the figure & table counters every chapter.
+\makeatletter
+\@addtoreset{figure}{section} % Figure counter
+\@addtoreset{table}{section} % Table counter
+\makeatother
 
 %% Include paragraphis into TOC.
 \setcounter{secnumdepth}{5}
 \setcounter{tocdepth}{5}
+
+%% Newline after paragrpaph title.
+\makeatletter
+\renewcommand\paragraph{%
+   \@startsection{paragraph}{4}{0mm}%
+      {-\baselineskip}%
+      {.1\baselineskip}%
+      {\normalfont\normalsize\bfseries}}
+\makeatother
+
+%% Drop chapter number and
+% \usepackage{titlesec}
+% \renewcommand{\thesection}{\arabic{section}}
+% \renewcommand{\thesubsection}{\arabic{subsection}}
+
+\usepackage[titles]{tocloft}
 
 %% Inline-списки.
 \usepackage[inline]{enumitem}
 \AddEnumerateCounter{\asbuk}{\@asbuk}{\cyrm}
 
 \makeatother
-\renewcommand{\labelitemi}{-}
+\renewcommand{\labelitemi}{--}
+
+% Keeps floats `in their place', preventing them from floating past a
+% "\FloatBarrier" command into another section.  The floats should not move
+% past every "\section".
+\usepackage[section]{placeins}
 
 \usepackage[%
     backend     = biber,
@@ -40,15 +69,48 @@
 ]{biblatex}
 \addbibresource{references.bib}
 
-\usepackage{csquotes}
-
 %% Separate multiple cites with '; '
 \renewcommand\multicitedelim{\addsemicolon\space}
 
+%% Полуторный интервал
+\usepackage[nodisplayskipstretch]{setspace}
+
+%% Переименование "содержания" в "оглавление"
+\gappto\captionsrussian{\renewcommand{\contentsname}{Оглавление}}
+
+\addtolength{\textheight}{\headheight}
+\addtolength{\textheight}{\headsep}
+\setlength{\headsep}{0pt}
+\setlength{\headheight}{0pt}
+
+%% Преобразует footnote '2 3' -> '2, 3'.
+\usepackage[multiple]{footmisc}
+
 \begin{document}
-\include{chapter2}
 
-\include{supplement/emblemetrics}
+% ------------------------------------------------------------------------------
+% Оглавление
+\thispagestyle{empty} % Disabling numbering on the TOC page.
+\tableofcontents
 
+% ------------------------------------------------------------------------------
+% Текст работы
+\begin{onehalfspacing}
+  \include{chapter2}
+\end{onehalfspacing}
+
+% ------------------------------------------------------------------------------
+% Список литературы
 \printbibliography
+
+% ------------------------------------------------------------------------------
+% Приложения
+
+\begin{appendices}
+  \renewcommand\appendixname{Приложение}
+  \renewcommand{\thesection}{\Asbuk{section}}
+
+  \include{supplement/logotrends}
+  \include{supplement/emblemetrics}
+\end{appendices}
 \end{document}
