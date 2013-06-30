@@ -2,8 +2,13 @@
 
 \usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[greek,english,russian]{babel}
+\usepackage[greek,french,english,russian]{babel}
 \usepackage{csquotes}
+
+%% Figure grids.
+\usepackage{caption}
+\usepackage{subcaption}
+\renewcommand{\thesubfigure}{\asbuk{subfigure}}
 
 %% PDF search & cut'n'paste
 \usepackage{cmap}
@@ -105,6 +110,7 @@
 ]{biblatex}
 \addbibresource{references/chapter1.bib}
 \addbibresource{references/chapter2.bib}
+\addbibresource{references/conclusion.bib}
 
 %% Ссылочки.
 \usepackage{hyperref}
@@ -174,7 +180,10 @@
   \include{supplement/logotrends}
   \include{supplement/emblemetrics}
   \include{supplement/territorial}
+  \include{supplement/kalman}
   \include{supplement/mollerup}
-  \include{supplement/trademarks}
+  \include{supplement/german}
+  \include{supplement/french}
+  \include{supplement/interviews}
 \end{appendices}
 \end{document}
