@@ -5,6 +5,9 @@
 \usepackage[greek,french,english,russian]{babel}
 \usepackage{csquotes}
 
+\usepackage{paratype}
+\usepackage{microtype}
+
 %% Figure grids.
 \usepackage{caption}
 \usepackage{subcaption}
@@ -105,8 +108,9 @@
     bibencoding = utf8,
     hyperref    = false,
     babel       = other,
-    citestyle   = gost-footnote-min,
-    bibstyle    = gost-footnote
+    citestyle   = gost-footnote,
+    bibstyle    = gost-numeric,
+    citereset   = section
 ]{biblatex}
 \addbibresource{references/chapter1.bib}
 \addbibresource{references/chapter2.bib}
@@ -166,7 +170,7 @@
 
 % ------------------------------------------------------------------------------
 % Список литературы
-\printbibliography
+\printbibliography{}
 
 % ------------------------------------------------------------------------------
 % Приложения
