@@ -6,7 +6,8 @@
 \usepackage{csquotes}
 
 \usepackage{paratype}
-\usepackage{microtype}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true]{microtype}
+%% More avail. here: http://www.khirevich.com/latex/microtype/
 
 %% Figure grids.
 \usepackage{caption}
@@ -152,8 +153,10 @@
 
 % ------------------------------------------------------------------------------
 % Оглавление
-\thispagestyle{empty} % Disabling numbering on the TOC page.
+\microtypesetup{protrusion=false}
+\thispagestyle{empty}             % Disables numbering on the TOC page.
 \tableofcontents
+\microtypesetup{protrusion=true}
 
 % ------------------------------------------------------------------------------
 % Текст работы
