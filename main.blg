@@ -1,0 +1,20 @@
+[0] Config.pm:425> INFO - This is Biber 1.7
+[1] Config.pm:428> INFO - Logfile is 'main.blg'
+[116] biber-darwin:252> INFO - === Tue Oct  8, 2013, 17:00:22
+[117] Biber.pm:333> INFO - Reading 'main.bcf'
+[303] Biber.pm:630> INFO - Found 52 citekeys in bib section 0
+[327] Biber.pm:2997> INFO - Processing section 0
+[384] Biber.pm:3134> INFO - Looking for bibtex format file 'references/chapter1.bib' for section 0
+[398] bibtex.pm:911> INFO - Decoding LaTeX character macros into UTF-8
+[413] bibtex.pm:786> INFO - Found BibTeX data source 'references/chapter1.bib'
+[439] Utils.pm:169> WARN - Datamodel: Entry 'society' (references/chapter1.bib): Invalid format '19.01.2013' of date field 'urldate' - ignoring
+[459] Utils.pm:169> WARN - Datamodel: Entry 'online:kulturolog' (references/chapter1.bib): Invalid format '20.12.2013' of date field 'urldate' - ignoring
+[487] Utils.pm:169> WARN - Datamodel: Entry 'prokudin' (references/chapter1.bib): Invalid format '11.03.2013' of date field 'urldate' - ignoring
+[494] Utils.pm:169> WARN - Datamodel: Entry 'ocherki' (references/chapter1.bib): Invalid format '07.08.2013' of date field 'urldate' - ignoring
+[497] Utils.pm:169> WARN - BibTeX subsystem: /var/folders/px/tsqnkxvd5xv7hz5j5tmmv74h0000gn/T/7sob7DNz75/chapter1.bib_1264.utf8, line 915, warning: 158 characters of junk seen at toplevel
+[1170] Biber.pm:2883> INFO - Overriding locale 'en_US.UTF-8' default tailoring 'variable = shifted' with 'variable = non-ignorable'
+[1170] Biber.pm:2889> INFO - Sorting 'entry' list 'nty' keys
+[1170] Biber.pm:2893> INFO - No sort tailoring available for locale 'en_US.UTF-8'
+[1997] bbl.pm:479> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[2004] bbl.pm:552> INFO - Output to main.bbl
+[2004] Biber.pm:105> INFO - WARNINGS: 5
