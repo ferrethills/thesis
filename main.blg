@@ -1,20 +1,49 @@
 [0] Config.pm:425> INFO - This is Biber 1.7
 [1] Config.pm:428> INFO - Logfile is 'main.blg'
-[116] biber-darwin:252> INFO - === Tue Oct  8, 2013, 17:00:22
-[117] Biber.pm:333> INFO - Reading 'main.bcf'
-[303] Biber.pm:630> INFO - Found 52 citekeys in bib section 0
-[327] Biber.pm:2997> INFO - Processing section 0
-[384] Biber.pm:3134> INFO - Looking for bibtex format file 'references/chapter1.bib' for section 0
-[398] bibtex.pm:911> INFO - Decoding LaTeX character macros into UTF-8
-[413] bibtex.pm:786> INFO - Found BibTeX data source 'references/chapter1.bib'
-[439] Utils.pm:169> WARN - Datamodel: Entry 'society' (references/chapter1.bib): Invalid format '19.01.2013' of date field 'urldate' - ignoring
-[459] Utils.pm:169> WARN - Datamodel: Entry 'online:kulturolog' (references/chapter1.bib): Invalid format '20.12.2013' of date field 'urldate' - ignoring
-[487] Utils.pm:169> WARN - Datamodel: Entry 'prokudin' (references/chapter1.bib): Invalid format '11.03.2013' of date field 'urldate' - ignoring
-[494] Utils.pm:169> WARN - Datamodel: Entry 'ocherki' (references/chapter1.bib): Invalid format '07.08.2013' of date field 'urldate' - ignoring
-[497] Utils.pm:169> WARN - BibTeX subsystem: /var/folders/px/tsqnkxvd5xv7hz5j5tmmv74h0000gn/T/7sob7DNz75/chapter1.bib_1264.utf8, line 915, warning: 158 characters of junk seen at toplevel
-[1170] Biber.pm:2883> INFO - Overriding locale 'en_US.UTF-8' default tailoring 'variable = shifted' with 'variable = non-ignorable'
-[1170] Biber.pm:2889> INFO - Sorting 'entry' list 'nty' keys
-[1170] Biber.pm:2893> INFO - No sort tailoring available for locale 'en_US.UTF-8'
-[1997] bbl.pm:479> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[2004] bbl.pm:552> INFO - Output to main.bbl
-[2004] Biber.pm:105> INFO - WARNINGS: 5
+[244] biber-darwin:252> INFO - === Wed Oct  9, 2013, 08:18:06
+[244] Biber.pm:333> INFO - Reading 'main.bcf'
+[520] Biber.pm:630> INFO - Found 217 citekeys in bib section 0
+[624] Biber.pm:2997> INFO - Processing section 0
+[690] Biber.pm:3134> INFO - Looking for bibtex format file 'references/chapter1.bib' for section 0
+[703] bibtex.pm:911> INFO - Decoding LaTeX character macros into UTF-8
+[717] bibtex.pm:786> INFO - Found BibTeX data source 'references/chapter1.bib'
+[830] Utils.pm:169> WARN - Datamodel: Entry 'society' (references/chapter1.bib): Invalid format '19.01.2013' of date field 'urldate' - ignoring
+[859] Utils.pm:169> WARN - Datamodel: Entry 'online:kulturolog' (references/chapter1.bib): Invalid format '20.12.2013' of date field 'urldate' - ignoring
+[899] Utils.pm:169> WARN - Datamodel: Entry 'prokudin' (references/chapter1.bib): Invalid format '11.03.2013' of date field 'urldate' - ignoring
+[908] Utils.pm:169> WARN - Datamodel: Entry 'ocherki' (references/chapter1.bib): Invalid format '07.08.2013' of date field 'urldate' - ignoring
+[919] Utils.pm:169> WARN - Datamodel: Entry 'online:sociallearning' (references/chapter1.bib): Invalid format '25.12.2012' of date field 'urldate' - ignoring
+[946] Utils.pm:169> WARN - Datamodel: Entry 'dictionary' (references/chapter1.bib): Invalid format '01.05.2013' of date field 'urldate' - ignoring
+[964] Utils.pm:169> WARN - Datamodel: Entry 'golova' (references/chapter1.bib): Invalid format '13.03.2013' of date field 'urldate' - ignoring
+[983] Utils.pm:169> WARN - Datamodel: Entry 'pantuhinaAM' (references/chapter1.bib): Invalid format '03.03.2013' of date field 'urldate' - ignoring
+[985] Utils.pm:169> WARN - Datamodel: Entry 'brending' (references/chapter1.bib): Invalid format '2.04.2013' of date field 'urldate' - ignoring
+[989] Utils.pm:169> WARN - Datamodel: Entry 'logotipy' (references/chapter1.bib): Invalid format '10.03.2013' of date field 'urldate' - ignoring
+[1018] Utils.pm:169> WARN - Datamodel: Entry 'tradetimeline' (references/chapter1.bib): Invalid format '21.01.2013' of date field 'urldate' - ignoring
+[1022] Utils.pm:169> WARN - Datamodel: Entry 'digitaltattoo' (references/chapter1.bib): Invalid format '21.04.2013' of date field 'urldate' - ignoring
+[1024] Utils.pm:169> WARN - Datamodel: Entry 'tedtattoo' (references/chapter1.bib): Invalid format '21.04.2013' of date field 'urldate' - ignoring
+[1034] Utils.pm:169> WARN - Datamodel: Entry 'logotype' (references/chapter1.bib): Invalid format '14.12.2012' of date field 'urldate' - ignoring
+[1080] Biber.pm:3134> INFO - Looking for bibtex format file 'references/chapter2.bib' for section 0
+[1088] bibtex.pm:911> INFO - Decoding LaTeX character macros into UTF-8
+[1096] bibtex.pm:786> INFO - Found BibTeX data source 'references/chapter2.bib'
+[1102] Utils.pm:169> WARN - Duplicate entry key: 'ariely2009predictably' in file 'references/chapter2.bib', skipping ...
+[1164] Utils.pm:169> WARN - Datamodel: Entry 'roblesconsumer' (references/chapter2.bib): Invalid format '23.05.2013' of date field 'urldate' - ignoring
+[1187] Utils.pm:169> WARN - Datamodel: Entry 'link:southafrica' (references/chapter2.bib): Invalid format '' of date field 'date' - ignoring
+[1188] Utils.pm:169> WARN - Datamodel: Entry 'link:europeanunion' (references/chapter2.bib): Invalid format '' of date field 'date' - ignoring
+[1189] Utils.pm:169> WARN - BibTeX subsystem: /var/folders/px/tsqnkxvd5xv7hz5j5tmmv74h0000gn/T/oBjQoj6ovZ/chapter2.bib_3773.utf8, line 401, warning: 1 characters of junk seen at toplevel
+[1189] Utils.pm:169> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[1189] Utils.pm:169> WARN - BibTeX subsystem: author, warning: comma(s) at end of name (removing)
+[1189] Utils.pm:169> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[1190] Utils.pm:169> WARN - BibTeX subsystem: author, warning: comma(s) at end of name (removing)
+[1190] Biber.pm:3134> INFO - Looking for bibtex format file 'references/conclusion.bib' for section 0
+[1192] bibtex.pm:911> INFO - Decoding LaTeX character macros into UTF-8
+[1192] bibtex.pm:786> INFO - Found BibTeX data source 'references/conclusion.bib'
+[1196] Utils.pm:169> WARN - I didn't find a database entry for '\IeC {\cyrr }\IeC {\cyrery }\IeC {\cyrk }\IeC {\cyrl }\IeC {\cyri }\IeC {\cyrn }1992\IeC {\cyrt }\IeC {\cyre }\IeC {\cyrl }\IeC {\cyra }' (section 0)
+[1197] Utils.pm:169> WARN - I didn't find a database entry for 'grigorevalj' (section 0)
+[1197] Utils.pm:169> WARN - I didn't find a database entry for 'warhol2002' (section 0)
+[1503] Utils.pm:169> WARN - The field 'author' in entry 'link:southafrica' cannot be null, deleting it
+[1504] Utils.pm:169> WARN - The field 'author' in entry 'link:europeanunion' cannot be null, deleting it
+[4043] Biber.pm:2883> INFO - Overriding locale 'en_US.UTF-8' default tailoring 'variable = shifted' with 'variable = non-ignorable'
+[4043] Biber.pm:2889> INFO - Sorting 'entry' list 'nty' keys
+[4043] Biber.pm:2893> INFO - No sort tailoring available for locale 'en_US.UTF-8'
+[8523] bbl.pm:479> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[8560] bbl.pm:552> INFO - Output to main.bbl
+[8561] Biber.pm:105> INFO - WARNINGS: 28
