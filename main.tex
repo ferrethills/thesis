@@ -121,11 +121,44 @@
     babel       = other,
     citestyle   = gost-footnote,
     bibstyle    = gost-numeric,
-    citereset   = section
+    citereset   = section,
+    sorting     = {thesis},
+    sortlocale  = {ru_RU.UTF8}
 ]{biblatex}
 \addbibresource{references/chapter1.bib}
 \addbibresource{references/chapter2.bib}
 \addbibresource{references/conclusion.bib}
+
+\DeclareSortingScheme{thesis}{
+  \sort{
+    \field{presort}
+  }
+  \sort[final]{
+    \field{sortkey}
+  }
+  \sort[direction=descending]{
+    \field{language}
+  }
+  \sort{
+    \field{type}
+  }
+  \sort{
+    \field{sortname}
+    \field{author}
+    \field{editor}
+    \field{translator}
+    \field{sorttitle}
+    \field{title}
+  }
+  \sort{
+    \field{sorttitle}
+    \field{title}
+  }
+  \sort{
+    \field{sortyear}
+    \field{year}
+  }
+}
 
 %% Ссылочки.
 \usepackage{hyperref}
