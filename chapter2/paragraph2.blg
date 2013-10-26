@@ -1,5 +1,0 @@
-[0] Config.pm:425> INFO - This is Biber 1.7
-[1] Config.pm:428> INFO - Logfile is 'paragraph2.blg'
-[104] biber-darwin:252> INFO - === Mon Sep 30, 2013, 06:19:37
-[358] Utils.pm:185> ERROR - Cannot find control file 'paragraph2.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
-[359] Biber.pm:109> INFO - ERRORS: 1

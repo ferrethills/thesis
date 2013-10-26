@@ -1,5 +1,11 @@
 *.el
 *.aux
 *.log
+*.blg
+*.bcf
+*.bbl
+*.synctex.gz
+*.xml
+*.toc
 auto
 .DS_Store
