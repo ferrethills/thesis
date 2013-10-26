@@ -7,5 +7,9 @@
 *.synctex.gz
 *.xml
 *.toc
+*.dvi
+*.out
+*.lof
+*.pdf
 auto
 .DS_Store

@@ -29,8 +29,7 @@
 %% Appendix.
 \usepackage[titletoc,title]{appendix}
 \renewcommand{\appendixtocname}{Приложения}
-\renewcommand{\appendixpagename}{Приложения}
-\renewcommand{\appendixname}{Приложние}
+\renewcommand{\appendixname}{Приложение}
 \makeatletter
 \let\oriAlph\Alph
 \let\orialph\alph
@@ -84,8 +83,7 @@
       {\normalfont\normalsize\bfseries}}
 \makeatother
 
-%% Drop chapter number and
-% \usepackage{titlesec}
+\usepackage[center]{titlesec}
 % \renewcommand{\thesection}{\arabic{section}}
 % \renewcommand{\thesubsection}{\arabic{subsection}}
 
@@ -111,11 +109,44 @@
     babel       = other,
     citestyle   = gost-footnote,
     bibstyle    = gost-numeric,
-    citereset   = section
+    citereset   = section,
+    sorting     = {thesis},
+    sortlocale  = {ru_RU.UTF8}
 ]{biblatex}
 \addbibresource{references/chapter1.bib}
 \addbibresource{references/chapter2.bib}
 \addbibresource{references/conclusion.bib}
+
+\DeclareSortingScheme{thesis}{
+  \sort{
+    \field{presort}
+  }
+  \sort[final]{
+    \field{sortkey}
+  }
+  \sort[direction=descending]{
+    \field{language}
+  }
+  \sort{
+    \field{type}
+  }
+  \sort{
+    \field{sortname}
+    \field{author}
+    \field{editor}
+    \field{translator}
+    \field{sorttitle}
+    \field{title}
+  }
+  \sort{
+    \field{sorttitle}
+    \field{title}
+  }
+  \sort{
+    \field{sortyear}
+    \field{year}
+  }
+}
 
 %% Ссылочки.
 \usepackage{hyperref}
@@ -138,13 +169,11 @@
 %% Полуторный интервал
 \usepackage[nodisplayskipstretch]{setspace}
 
-%% Переименование "содержания" в "оглавление"
-\gappto\captionsrussian{\renewcommand{\contentsname}{Оглавление}}
-
-\addtolength{\textheight}{\headheight}
-\addtolength{\textheight}{\headsep}
-\setlength{\headsep}{0pt}
-\setlength{\headheight}{0pt}
+%% Sergei: WTF is this?
+%\addtolength{\textheight}{\headheight}
+%\addtolength{\textheight}{\headsep}
+%\setlength{\headsep}{0pt}
+%\setlength{\headheight}{0pt}
 
 %% Преобразует footnote '2 3' -> '2, 3'.
 \usepackage[multiple]{footmisc}
@@ -210,4 +239,5 @@
  \include{supplement/french}
  \include{supplement/interviews}
 \end{appendices}
+
 \end{document}
