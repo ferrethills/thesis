@@ -103,6 +103,7 @@
 % "\FloatBarrier" command into another section.  The floats should not move
 % past every "\section".
 \usepackage[section]{placeins}
+
 \usepackage[%
     backend     = biber,
     bibencoding = utf8,
@@ -110,44 +111,11 @@
     babel       = other,
     citestyle   = gost-footnote,
     bibstyle    = gost-numeric,
-    citereset   = section,
-    sorting     = {thesis},
-    sortlocale  = {ru_RU.UTF8}
+    citereset   = section
 ]{biblatex}
 \addbibresource{references/chapter1.bib}
 \addbibresource{references/chapter2.bib}
 \addbibresource{references/conclusion.bib}
-
-\DeclareSortingScheme{thesis}{
-  \sort{
-    \field{presort}
-  }
-  \sort[final]{
-    \field{sortkey}
-  }
-  \sort[direction=descending]{
-    \field{language}
-  }
-  \sort{
-    \field{type}
-  }
-  \sort{
-    \field{sortname}
-    \field{author}
-    \field{editor}
-    \field{translator}
-    \field{sorttitle}
-    \field{title}
-  }
-  \sort{
-    \field{sorttitle}
-    \field{title}
-  }
-  \sort{
-    \field{sortyear}
-    \field{year}
-  }
-}
 
 %% Ссылочки.
 \usepackage{hyperref}
@@ -188,7 +156,7 @@
 \fancyhead[C]{\thepage}}
 \pagestyle{plain}
 
-\usepackage{hyphenat}
+\usepackage{hyphenat} 
 
 \setlist[1]{topsep=0pt,parsep=0pt,itemsep=0pt}
 
@@ -207,14 +175,14 @@
 % ------------------------------------------------------------------------------
 % Текст работы
 \begin{onehalfspace}
-%\include{introduction}
-%\include{chapter1/paragraph1}
-%\include{chapter1/paragraph2}
-%include{chapter1/paragraph3}
-%\include{chapter2/paragraph1}
-%\include{chapter2/paragraph2}
+\include{introduction}
+\include{chapter1/paragraph1}
+\include{chapter1/paragraph2}
+\include{chapter1/paragraph3}
+\include{chapter2/paragraph1}
+\include{chapter2/paragraph2}
 \include{chapter2/paragraph3}
-%\include{conclusion}
+\include{conclusion}
 \end{onehalfspace}
 
 % ------------------------------------------------------------------------------
@@ -233,13 +201,13 @@
   \counterwithin{table}{section}
   \renewcommand{\thesection}{\Asbuk{section}}
 
- %\include{supplement/logotrends}
- %\include{supplement/emblemetrics}
- %\include{supplement/territorial}
- %\include{supplement/kalman}
- %\include{supplement/mollerup}
- %\include{supplement/german}
- %\include{supplement/french}
- %\include{supplement/interviews}
+ \include{supplement/logotrends}
+ \include{supplement/emblemetrics}
+ \include{supplement/territorial}
+ \include{supplement/kalman}
+ \include{supplement/mollerup}
+ \include{supplement/german}
+ \include{supplement/french}
+ \include{supplement/interviews}
 \end{appendices}
 \end{document}
