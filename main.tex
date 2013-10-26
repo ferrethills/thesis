@@ -7,7 +7,7 @@
 
 \usepackage{pscyr}
 %\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true]{microtype}
-%% More avail. here: ht>tp://www.khirevich.com/latex/microtype/
+%% More avail. here: http://www.khirevich.com/latex/microtype/
 
 %% Figure grids.
 \usepackage{caption}
@@ -128,9 +128,6 @@
     \field{language}
   }
   \sort{
-    \field{type}
-  }
-  \sort{
     \field{sortname}
     \field{author}
     \field{editor}
@@ -185,7 +182,7 @@
 \fancyhead[C]{\thepage}}
 \pagestyle{plain}
 
-\usepackage{hyphenat} 
+\usepackage{hyphenat}
 
 \setlist[1]{topsep=0pt,parsep=0pt,itemsep=0pt}
 
@@ -216,10 +213,18 @@
 
 % ------------------------------------------------------------------------------
 % Список литературы
- \begingroup
+\renewcommand{\refname}{Список использованных источников}
+\addcontentsline{toc}{section}{Список использованных источников}
+\begingroup
 \sloppy
 \printbibliography{}
 \endgroup
+
+% ------------------------------------------------------------------------------
+% Список иллюстраций
+\pagebreak
+\addcontentsline{toc}{section}{Список иллюстраций}
+\listoffigures
 
 % ------------------------------------------------------------------------------
 % Приложения
