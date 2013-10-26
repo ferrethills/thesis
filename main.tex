@@ -9,6 +9,16 @@
 %\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true]{microtype}
 %% More avail. here: http://www.khirevich.com/latex/microtype/
 
+%% Поля
+\usepackage[includefoot,top=20mm,bottom=20mm,left=25mm,right=10mm]{geometry}
+
+%% Номер страницы сверху
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
 %% Figure grids.
 \usepackage{caption}
 \usepackage{subcaption}
@@ -17,11 +27,11 @@
 %% PDF search & cut'n'paste
 \usepackage{cmap}
 
-%% Поля
-\usepackage[foot=0pt,top=20mm,bottom=20mm,left=25mm,right=10mm]{geometry}
-
 %% Отступ в первом абзаце
 \usepackage{indentfirst}
+
+%% Отступ в начале абзаца.
+\setlength{\parindent}{35pt}
 
 %% Включение графических файлов.
 \usepackage{graphicx}
@@ -173,20 +183,14 @@
 %% Переименование "содержания" в "оглавление"
 \gappto\captionsrussian{\renewcommand{\contentsname}{Оглавление}}
 
-\addtolength{\textheight}{\headheight}
-\addtolength{\textheight}{\headsep}
-\setlength{\headsep}{0pt}
-\setlength{\headheight}{0pt}
+%% Sergei: WTF is this?
+%\addtolength{\textheight}{\headheight}
+%\addtolength{\textheight}{\headsep}
+%\setlength{\headsep}{0pt}
+%\setlength{\headheight}{0pt}
 
 %% Преобразует footnote '2 3' -> '2, 3'.
 \usepackage[multiple]{footmisc}
-
-\usepackage{fancyhdr}
-\fancyhf{} % clear all header and footers
-\renewcommand{\headrulewidth}{0pt} % remove the header rule
-\fancypagestyle{plain}{
-\fancyhead[C]{\thepage}}
-\pagestyle{plain}
 
 \usepackage{hyphenat}
 
@@ -200,7 +204,6 @@
 % ------------------------------------------------------------------------------
 % Оглавление
 %\microtypesetup{protrusion=false}
-\thispagestyle{empty}             % Disables numbering on the TOC page.
 \tableofcontents
 %\microtypesetup{protrusion=true}
 
@@ -212,17 +215,22 @@
 %\include{chapter1/paragraph2}
 %include{chapter1/paragraph3}
 %\include{chapter2/paragraph1}
-%\include{chapter2/paragraph2}
-\include{chapter2/paragraph3}
+\include{chapter2/paragraph2}
+%\include{chapter2/paragraph3}
 %\include{conclusion}
 \end{onehalfspace}
 
 % ------------------------------------------------------------------------------
 % Список литературы
- \begingroup
+\begingroup
 \sloppy
 \printbibliography{}
 \endgroup
+
+% ------------------------------------------------------------------------------
+% Список иллюстраций
+\pagebreak
+\listoffigures
 
 % ------------------------------------------------------------------------------
 % Приложения
