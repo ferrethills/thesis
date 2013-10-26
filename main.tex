@@ -103,7 +103,6 @@
 % "\FloatBarrier" command into another section.  The floats should not move
 % past every "\section".
 \usepackage[section]{placeins}
-
 \usepackage[%
     backend     = biber,
     bibencoding = utf8,
@@ -111,11 +110,44 @@
     babel       = other,
     citestyle   = gost-footnote,
     bibstyle    = gost-numeric,
-    citereset   = section
+    citereset   = section,
+    sorting     = {thesis},
+    sortlocale  = {ru_RU.UTF8}
 ]{biblatex}
 \addbibresource{references/chapter1.bib}
 \addbibresource{references/chapter2.bib}
 \addbibresource{references/conclusion.bib}
+
+\DeclareSortingScheme{thesis}{
+  \sort{
+    \field{presort}
+  }
+  \sort[final]{
+    \field{sortkey}
+  }
+  \sort[direction=descending]{
+    \field{language}
+  }
+  \sort{
+    \field{type}
+  }
+  \sort{
+    \field{sortname}
+    \field{author}
+    \field{editor}
+    \field{translator}
+    \field{sorttitle}
+    \field{title}
+  }
+  \sort{
+    \field{sorttitle}
+    \field{title}
+  }
+  \sort{
+    \field{sortyear}
+    \field{year}
+  }
+}
 
 %% Ссылочки.
 \usepackage{hyperref}
@@ -156,7 +188,7 @@
 \fancyhead[C]{\thepage}}
 \pagestyle{plain}
 
-\usepackage{hyphenat} 
+\usepackage{hyphenat}
 
 \setlist[1]{topsep=0pt,parsep=0pt,itemsep=0pt}
 
@@ -181,7 +213,7 @@
 %include{chapter1/paragraph3}
 %\include{chapter2/paragraph1}
 %\include{chapter2/paragraph2}
-%\include{chapter2/paragraph3}
+\include{chapter2/paragraph3}
 %\include{conclusion}
 \end{onehalfspace}
 
